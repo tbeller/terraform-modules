@@ -23,7 +23,7 @@ provider "azurerm" {
       prevent_deletion_if_contains_resources = false
     }
   }
-  #subscription_id     = "your-subscription-id"
+  #subscription_id     = "your-subscription-id" # Or set as environment variable
   storage_use_azuread = true
 }
 
@@ -101,7 +101,6 @@ The following resources are used by this module:
 - [azurerm_resource_group.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) (resource)
 - [random_integer.region_index](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/integer) (resource)
 
-<!-- markdownlint-disable MD013 -->
 ## Required Inputs
 
 No required inputs.
@@ -113,28 +112,6 @@ No optional inputs.
 ## Outputs
 
 No outputs.
-
-## Modules
-
-The following Modules are called:
-
-### <a name="module_naming"></a> [naming](#module\_naming)
-
-Source: Azure/naming/azurerm
-
-Version: ~> 0.3
-
-### <a name="module_regions"></a> [regions](#module\_regions)
-
-Source: Azure/regions/azurerm
-
-Version: ~> 0.3
-
-### <a name="module_vnet"></a> [vnet](#module\_vnet)
-
-Source: ../../
-
-Version:
 
 ## Usage
 
