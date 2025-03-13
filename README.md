@@ -1,12 +1,13 @@
 # Terraform Modules for Azure
 
-This repository contains several Terraform modules for managing Azure resources. Each module is designed to be reusable and easy to integrate into your Terraform configurations.
+This repository contains several Terraform modules for managing Azure resources. Each module is designed to be reusable and easy to integrate into Terraform configurations.
 
 ## Modules
 
 Below is a list of available modules in this repository. Click on the module name to view its specific README and usage instructions.
 
 - [AVD with Entra ID Authentication](modules/avd-entra-id/README.md)
+- [WAN Gateway](modules/wan-gateway/README.md)
 
 ## Usage
 
