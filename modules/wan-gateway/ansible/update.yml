@@ -1,0 +1,12 @@
+- name: Update and upgrade the system
+  hosts: all
+  become: true
+  tasks:
+    - name: Update the apt cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+

@@ -1,0 +1,15 @@
+- name: Configure WireGuard
+  hosts: all
+  become: true
+  tasks:
+    - name: Copy WireGuard configuration
+      template:
+        src: wg0.conf
+        dest: /etc/wireguard/wg0.conf
+        mode: "0600"
+
+    - name: Enable and start WireGuard service
+      systemd:
+        name: wg-quick@wg0
+        enabled: true
+        state: started

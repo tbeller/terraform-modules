@@ -1,0 +1,21 @@
+---
+- name: Configure IP forwarding and install iptables-persistent
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Allow forwarding on eth0
+      ansible.builtin.command: iptables -A FORWARD -i eth0 -j ACCEPT
+
+    - name: Add NAT rule for outgoing traffic
+      ansible.builtin.command: iptables -t nat -A POSTROUTING -s 10.1.0.0/16 -o eth0 -j MASQUERADE
+
+    #- name: Save iptables rules
+    #  ansible.builtin.command: iptables-save > /etc/iptables/rules.v4
+
+    - name: Install iptables-persistent
+      ansible.builtin.apt:
+        name: iptables-persistent
+        state: present
+        update_cache: true
+

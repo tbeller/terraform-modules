@@ -1,0 +1,15 @@
+---
+- name: Run Updates
+  import_playbook: update.yml
+
+- name: Install Wireguard
+  import_playbook: install_wireguard.yml
+
+- name: Configure iptables
+  import_playbook: configure_iptables.yml
+
+- name: Configure Wireguard
+  import_playbook: configure_wireguard.yml
+
+- name: Enable IP Forwarding
+  import_playbook: enable_ip_forwarding.yml

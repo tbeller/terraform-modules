@@ -1,0 +1,9 @@
+- name: Install WireGuard
+  hosts: all
+  become: true
+  tasks:
+    - name: Install WireGuard
+      apt:
+        name: wireguard
+        state: present
+

@@ -1,0 +1,17 @@
+#Configure as appropriate for your Wireguard server
+[Interface]
+PrivateKey = <Generated private key>
+Address = <Local Wireguard IP>
+DNS = <DNS server>
+MTU = 1412
+ListenPort = 51820
+SaveConfig = true
+PostUp = iptables -A FORWARD -i %i -j ACCEPT
+PostDown = iptables -D FORWARD -i %i -j ACCEPT
+
+[Peer]
+PublicKey = <Peer public key>
+PresharedKey = <Peer preshared key>
+Endpoint = <Peer IP/hostname and port>
+AllowedIPs = <Allowed IPs/subnets on peer side>
+PersistentKeepalive = 25  
